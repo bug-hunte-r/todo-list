@@ -32,13 +32,13 @@ export default function Home() {
         </div>
         <input type='text' placeholder='Title' className='inputs-add-todo' />
         <input type='text' placeholder='Description' className='inputs-add-todo' />
-        <button className='btn-add-new-todo-in-modal'>Add</button>
         <h3 className='title-Priority'>Select the priority level for this todo.</h3>
         <div className='container-Priority-levels'>
           <button className='btn-Priority-levels gr'>Low</button>
           <button className='btn-Priority-levels or'>Medium</button>
           <button className='btn-Priority-levels re'>High</button>
         </div>
+        <button className='btn-add-new-todo-in-modal'>Add</button>
       </div>
 
     </>

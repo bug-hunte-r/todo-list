@@ -1,8 +1,12 @@
 /* start nav */
 
-.navbar{
+body{
+    overflow-x: hidden;
+}
+
+.navbar {
     background-color: #715A5A;
-    width: 95vw; 
+    width: 95vw;
     height: 90px;
     display: flex;
     justify-self: center;
@@ -13,11 +17,12 @@
     border-radius: 10px;
 }
 
-.title-project{
+.title-project {
     color: white;
+    user-select: none;
 }
 
-.btn-add-new-todo{
+.btn-add-new-todo {
     color: white;
     display: flex;
     align-items: center;
@@ -29,23 +34,23 @@
     padding: 10px;
     transition: 0.3s;
     font-weight: 500;
+    user-select: none;
 }
 
-.icon-add-todo{
+.icon-add-todo {
     font-size: 20px;
 }
 
-.btn-add-new-todo:hover{
+.btn-add-new-todo:hover {
     color: #715A5A;
     background-color: white;
-    transform: translateY(4px);
 }
 
 /* end nav */
 
 /* start todos */
 
-.container{
+.container {
     width: 95vw;
     display: flex;
     align-self: center;
@@ -56,7 +61,7 @@
 }
 
 
-.todo-card{
+.todo-card {
     background-color: white;
     width: 100%;
     height: auto;
@@ -68,7 +73,7 @@
     align-items: center;
 }
 
-.container-todos-texts{
+.container-todos-texts {
     width: 70%;
     white-space: normal;
     overflow-wrap: break-word;
@@ -80,29 +85,29 @@
     /* background-color: blue; */
 }
 
-.todo-title{
+.todo-title {
     color: #715A5A;
     font-size: 25px;
     margin-top: 20px;
 }
 
-.todo-desc{
+.todo-desc {
     color: rgb(48, 48, 48);
     font-size: 18px;
 }
 
-.todo-priority{
+.todo-priority {
     color: green;
 }
 
-.container-todos-icons{
+.container-todos-icons {
     width: 15%;
     display: flex;
     justify-content: space-between;
     /* background-color: red; */
 }
 
-.todos-icons{
+.todos-icons {
     font-size: 20px;
     color: #715A5A;
     cursor: pointer;
@@ -112,62 +117,66 @@
 
 /* start add todos modal */
 
-.container-modal{
-    background-color: white;
-    width: 50vw;
+.container-modal {
+    background-color: #715A5A;
+    width: 700px;
     display: flex;
     justify-self: center;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     position: fixed;
-    top: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 10px;
     height: auto;
     padding: 30px;
     row-gap: 10px;
-    box-shadow: 0px 0px 3px 1px #715A5A;
-    border: 1px solid #715A5A;
+    box-shadow: 0px 0px 0.1px 3px #715A5A;
+    /* border: 1px solid #715A5A; */
     transition: 0.5s;
+    border: 1px solid white;
 }
 
-.open-modal{
-    transform: translateX(0%);
+.open-modal {
+    transform: translate(-50%, -50%) translateX(0%);
 }
 
-.close-modal{
-    transform: translateX(150%);
+.close-modal {
+    transform: translate(-50%, -50%) translateX(150%);
 }
 
-.close-and-title{
+.close-and-title {
     display: flex;
     align-items: center;
 }
 
-.icon-close-modal{
+.icon-close-modal {
     cursor: pointer;
     position: absolute;
     left: 20px;
-    font-size: 20px;
-    color: #715A5A;
+    font-size: 22px;
+    color: white;
 }
 
-.title-add-new-todo-mdoal{
-    color: #715A5A;
+.title-add-new-todo-mdoal {
+    color: white;
+    font-size: 30px;
 }
 
-.inputs-add-todo{
+.inputs-add-todo {
     width: 70%;
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 7px;
     outline: none;
     font-size: 17px;
     border: 2px solid #715A5A;
     color: #715A5A;
 }
 
-.btn-add-new-todo-in-modal{
+.btn-add-new-todo-in-modal {
     width: 100px;
     padding: 5px;
     font-size: 17px;
@@ -175,44 +184,42 @@
     border-radius: 5px;
     cursor: pointer;
     background-color: white;
-    border: 2px solid #715A5A;
     color: #715A5A;
     font-weight: 600;
-    transition: 0.3s;
-}
-
-.btn-add-new-todo-in-modal:hover{
-    background-color: #715A5A;
-    color: white;
-}
-
-.title-Priority{
     margin-top: 30px;
-    color: #715A5A;
 }
 
-.container-Priority-levels{
+.title-Priority {
+    margin-top: 30px;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.container-Priority-levels {
     display: flex;
     width: 40%;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
-.gr{
+.gr {
     color: green;
     background-color: rgb(227, 255, 227);
 }
 
-.or{
+.or {
     color: orangered;
     background-color: rgb(252, 228, 219);
 }
 
-.re{
+.re {
     color: red;
     background-color: rgb(255, 223, 223);
 }
 
-.btn-Priority-levels{
+.btn-Priority-levels {
     border: none;
     border-radius: 5px;
     padding: 7px;

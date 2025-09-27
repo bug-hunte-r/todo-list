@@ -4,17 +4,21 @@
     }
 }
 
-@media only screen and (max-width: 500px) {
-    .title-project {
-        font-size: 25px;
+@media only screen and (max-width: 735px) {
+    .container-modal {
+        width: 95vw;
     }
+}
 
-    .btn-add-new-todo {
-        font-size: 16px;
+@media only screen and (max-width: 645px) {
+    .container-Priority-levels {
+        width: 50%;
     }
+}
 
-    .icon-add-todo {
-        font-size: 16px;
+@media only screen and (max-width: 540px) {
+    .container-Priority-levels {
+        width: 70%;
     }
 }
 
@@ -39,8 +43,37 @@
     .container-todos-texts {
         width: 100%;
     }
+
+    .title-project {
+        font-size: 25px;
+    }
+
+    .btn-add-new-todo {
+        font-size: 16px;
+    }
+
+    .icon-add-todo {
+        font-size: 16px;
+    }
 }
 
+@media only screen and (max-width: 460px) {
+    .inputs-add-todo {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .container-Priority-levels {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 385px) {
+    .title-Priority {
+        font-size: 18px;
+    }
+}
 
 @media only screen and (max-width: 360px) {
     .title-project {
@@ -54,29 +87,86 @@
     .icon-add-todo {
         font-size: 14px;
     }
+
+    .inputs-add-todo {
+        padding: 8px 10px;
+    }
+}
+
+@media only screen and (max-width: 353px) {
+    .title-Priority {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 337px) {
+    .title-Priority {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 337px) {
+    .title-Priority {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 305px) {
+    .title-Priority {
+        font-size: 14px;
+    }
 }
 
 @media only screen and (min-width: 1240px) {
     .todo-title {
         font-size: calc(2vw + 5px);
     }
-    
+
     .todo-desc {
         font-size: calc(1vw + 7px);
     }
-    
+
     .todo-priority {
         font-size: calc(1vw + 7px);
     }
-    
+
     .todos-icons {
         font-size: calc(1vw + 10px);
     }
+
+    .container-modal {
+        width: 60vw;
+    }
+
+    .icon-close-modal {
+        font-size: calc(1vw + 10px);
+    }
+
+    .title-add-new-todo-mdoal {
+        font-size: calc(2vw + 10px);
+    }
+
+    .inputs-add-todo {
+        font-size: calc(1vw + 6px);
+    }
+    
+    .btn-add-new-todo-in-modal {
+        font-size: calc(1vw + 6px);
+    }
+
+    .title-Priority {
+        font-size: calc(2vw + 2px);
+    }
+
+    .btn-Priority-levels {
+        font-size: calc(1vw + 3px);
+    }
+
 }
 
-@media only screen and (min-width: 1800px) {
-    .todo-card{
-        padding: 40px;
+@media only screen and (min-width: 1360px) {
+    .btn-Priority-levels{
+        width: 80px;
     }
 }
 
@@ -94,8 +184,24 @@
     }
 }
 
+@media only screen and (min-width: 1480px) {
+    .btn-Priority-levels{
+        width: 90px;
+    }
+}
+
 @media only screen and (min-width: 1650px) {
     .navbar {
         height: 130px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .todo-card {
+        padding: 40px;
+    }
+
+    .btn-Priority-levels{
+        width: 120px;
     }
 }
