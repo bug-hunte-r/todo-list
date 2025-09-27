@@ -30,17 +30,17 @@ export async function GET() {
     return new Response(JSON.stringify(allTodos), { status: 200 })
 }
 
-export async function PUT(req) {
+// export async function PUT(req) {
 
-    const body = await req.json()
+//     const body = await req.json()
 
-    const { id } = body
+//     const { id } = body
 
-    if (!isValidObjectId(_id)) {
-        return new Response(JSON.stringify({ message: 'Id is not valid' }))
-    }
+//     if (!isValidObjectId(id)) {
+//         return new Response(JSON.stringify({ message: 'Id is not valid' }), { status: 404 })
+//     }
 
-    await Todo.findByIdAndUpdate({ _id: id }, { $set: { isComplete: true } })
+//     await Todo.findByIdAndUpdate({ _id: id }, { $set: { isComplete: true } })
 
-    return new Response(JSON.stringify({ message: 'Todo completed' }))
-}
+//     return new Response(JSON.stringify({ message: 'Todo completed' }), { status: 200 })
+// }
