@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import style from '../../styles/todolist.css'
 import media from '../../styles/media-TodoList.css'
 import { FiEdit2 } from "react-icons/fi";
@@ -6,22 +7,41 @@ import { FiTrash } from "react-icons/fi";
 import { FaRegCircleCheck } from "react-icons/fa6";
 
 function TodoCard() {
+
+    const [todos, setTodos] = useState()
+
+    useEffect(() => {
+        const getAllTodos = async () => {
+
+            const res = await fetch('http://localhost:3000/api/todo')
+            const data = await res.json()
+            setTodos(data)
+        }
+
+        getAllTodos()
+    }, [])
+
     return (
-        <div className='todo-card'>
+        <>
+            {todos?.map(todo => (
 
-            <div className='container-todos-texts'>
-                <p className='todo-priority'>Todo Priority</p>
-                <h2 className='todo-title'>Todo Title</h2>
-                <p className='todo-desc'>Todo des is the best platform for pepole and the animals are very cute and they can eat my dick babay girl hi i do the playbody</p>
-            </div>
+                <div className='todo-card' key={todo._id}>
 
-            <div className='container-todos-icons'>
-                <FiEdit2 className='todos-icons' />
-                <FiTrash className='todos-icons trash' />
-                <FaRegCircleCheck className='todos-icons check' />
-            </div>
+                    <div className='container-todos-texts'>
+                        <p className='todo-priority'>{todo.priority}</p>
+                        <h2 className='todo-title'>{todo.title}</h2>
+                        <p className='todo-desc'>{todo.desc}</p>
+                    </div>
 
-        </div>
+                    <div className='container-todos-icons'>
+                        <FiEdit2 className='todos-icons' />
+                        <FiTrash className='todos-icons trash' />
+                        <FaRegCircleCheck className='todos-icons check' />
+                    </div>
+
+                </div>
+            ))}
+        </>
     )
 }
 

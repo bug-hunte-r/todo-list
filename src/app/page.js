@@ -35,6 +35,8 @@ export default function Home() {
       setTitle('')
       setDesc('')
       setPriority('')
+
+      setIsAddModalOpen(false)
     }
 
     alert(data.message)
@@ -49,9 +51,6 @@ export default function Home() {
       </div>
 
       <div className="container">
-        <TodoCard />
-        <TodoCard />
-        <TodoCard />
         <TodoCard />
       </div>
 
