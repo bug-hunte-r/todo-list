@@ -13,12 +13,10 @@
 
 .title-project{
     color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .btn-add-new-todo{
     color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -45,3 +43,66 @@
 
 /* start todos */
 
+.container{
+    width: 95vw;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    margin-top: 80px;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+
+.todo-card{
+    background-color: white;
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 1px #715A5A;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    align-items: center;
+}
+
+.container-todos-texts{
+    width: 70%;
+    white-space: normal;
+    overflow-wrap: break-word;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.todo-title{
+    color: #715A5A;
+    font-size: 25px;
+}
+
+.todo-desc{
+    color: rgb(48, 48, 48);
+    font-size: 18px;
+}
+
+.todo-priority{
+    color: green;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    padding-top: 10px;
+}
+
+.container-todos-icons{
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.todos-icons{
+    font-size: 20px;
+    color: #715A5A;
+    cursor: pointer;
+}
