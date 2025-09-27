@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-const todoSchema = mongoose.Schema({
+const todoSchema = new mongoose.Schema({
 
     title: {
         type: String,
@@ -17,9 +17,9 @@ const todoSchema = mongoose.Schema({
         required: true
     },
 
-    status: {
-        type: String,
-        required: true
+    isComplete: {
+        type: Boolean,
+        default: false
     }
 })
 
