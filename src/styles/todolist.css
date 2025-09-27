@@ -26,6 +26,7 @@
     border-radius: 10px;
     padding: 10px;
     transition: 0.3s;
+    font-weight: 500;
 }
 
 .icon-add-todo{

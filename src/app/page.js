@@ -1,4 +1,5 @@
 import style from '../styles/todolist.css'
+import media from '../styles/media-TodoList.css'
 import { FaPlus } from "react-icons/fa";
 
 export default function Home() {
