@@ -8,7 +8,7 @@ import { FaRegCircleCheck } from "react-icons/fa6";
 
 function TodoCard() {
 
-    const [todos, setTodos] = useState()
+    const [todos, setTodos] = useState([])
 
     useEffect(() => {
         const getAllTodos = async () => {

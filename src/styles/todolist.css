@@ -58,6 +58,7 @@ body{
     margin-top: 50px;
     flex-direction: column;
     row-gap: 50px;
+    margin-bottom: 50px;
 }
 
 
@@ -176,6 +177,10 @@ body{
     color: #715A5A;
 }
 
+.top{
+    margin-top: 50px;
+}
+
 .btn-add-new-todo-in-modal {
     width: 100px;
     padding: 5px;
@@ -210,7 +215,7 @@ body{
 }
 
 .or {
-    color: orangered;
+    color: orange;
     background-color: rgb(252, 228, 219);
 }
 
@@ -229,27 +234,12 @@ body{
 
 .gr-2 {
     color: green;
-    background-color: rgb(227, 255, 227);
-    width: 80px;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px;
 }
 
 .or-2 {
-    color: orangered;
-    background-color: rgb(252, 228, 219);
-    width: 80px;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px;
+    color: orange;
 }
 
 .re-2 {
     color: red;
-    background-color: rgb(255, 223, 223);
-    width: 80px;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px;
 }

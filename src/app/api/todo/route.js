@@ -26,5 +26,5 @@ export async function GET() {
         return new Response(JSON.stringify({ message: 'Todo not found' }), { status: 404 })
     }
 
-    return new Response(JSON.stringify(allTodos, null, 2), { status: 200 })
+    return new Response(JSON.stringify(allTodos), { status: 200 })
 }

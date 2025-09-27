@@ -60,9 +60,9 @@ export default function Home() {
           <IoMdClose className='icon-close-modal' onClick={() => setIsAddModalOpen(false)} />
           <h2 className='title-add-new-todo-mdoal'>Add Todo</h2>
         </div>
-        <input type='text' placeholder='Title' className='inputs-add-todo' value={title} onChange={event => setTitle(event.target.value)} />
+        <input type='text' placeholder='Title' className='inputs-add-todo top' value={title} onChange={event => setTitle(event.target.value)} />
         <input type='text' placeholder='Description' className='inputs-add-todo' value={desc} onChange={event => setDesc(event.target.value)} />
-        <h3 className='title-Priority'>Select the priority level for this todo.</h3>
+        <h3 className='title-Priority'>Select the priority level for todo</h3>
         <div className='container-Priority-levels'>
           <button className='btn-Priority-levels gr' value={'Low'} onClick={event => setPriority(event.target.value)}>Low</button>
           <button className='btn-Priority-levels or' value={'Medium'} onClick={event => setPriority(event.target.value)}>Medium</button>
