@@ -1,16 +1,21 @@
+"use client"
 import style from '../styles/todolist.css'
 import media from '../styles/media-TodoList.css'
 import { FaPlus } from "react-icons/fa";
 import TodoCard from '@/components/modules/Todo-card';
 import { IoMdClose } from "react-icons/io";
+import { useState } from 'react';
 
 export default function Home() {
+
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false)
+
   return (
     <>
 
       <div className='navbar'>
         <h1 className='title-project'>Todo List</h1>
-        <h3 className='btn-add-new-todo'>Add New Todo <FaPlus className='icon-add-todo' /></h3>
+        <h3 className='btn-add-new-todo' onClick={() => setIsAddModalOpen(true)}>Add New Todo <FaPlus className='icon-add-todo' /></h3>
       </div>
 
       <div className="container">
@@ -20,9 +25,9 @@ export default function Home() {
         <TodoCard />
       </div>
 
-      <div className='container-modal'>
+      <div className={`container-modal ${isAddModalOpen ? 'open-modal' : 'close-modal'}`}>
         <div className='close-and-title'>
-          <IoMdClose className='icon-close-modal' />
+          <IoMdClose className='icon-close-modal' onClick={() => setIsAddModalOpen(false)} />
           <h2 className='title-add-new-todo-mdoal'>Add Todo</h2>
         </div>
         <input type='text' placeholder='Title' className='inputs-add-todo' />

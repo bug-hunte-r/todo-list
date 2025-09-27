@@ -128,12 +128,15 @@
     row-gap: 10px;
     box-shadow: 0px 0px 3px 1px #715A5A;
     border: 1px solid #715A5A;
-    transform: translateX(150%);
     transition: 0.5s;
 }
 
 .open-modal{
     transform: translateX(0%);
+}
+
+.close-modal{
+    transform: translateX(150%);
 }
 
 .close-and-title{
