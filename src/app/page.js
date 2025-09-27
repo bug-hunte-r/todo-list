@@ -22,15 +22,18 @@ export default function Home() {
 
       <div className='container-modal'>
         <div className='close-and-title'>
-          < IoMdClose />
-          <h2>Add Todo</h2>
+          <IoMdClose className='icon-close-modal' />
+          <h2 className='title-add-new-todo-mdoal'>Add Todo</h2>
         </div>
         <input type='text' placeholder='Title' className='inputs-add-todo' />
         <input type='text' placeholder='Description' className='inputs-add-todo' />
+        <button className='btn-add-new-todo-in-modal'>Add</button>
         <h3 className='title-Priority'>Select the priority level for this todo.</h3>
-        <button className='btn-Priority-levels'>Low</button>
-        <button className='btn-Priority-levels'>Medium</button>
-        <button className='btn-Priority-levels'>High</button>
+        <div className='container-Priority-levels'>
+          <button className='btn-Priority-levels gr'>Low</button>
+          <button className='btn-Priority-levels or'>Medium</button>
+          <button className='btn-Priority-levels re'>High</button>
+        </div>
       </div>
 
     </>
