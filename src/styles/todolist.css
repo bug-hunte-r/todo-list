@@ -1,3 +1,5 @@
+/* start nav */
+
 .navbar{
     background-color: #715A5A;
     width: 100%; 
@@ -38,3 +40,8 @@
     background-color: white;
     transform: translateY(4px);
 }
+
+/* end nav */
+
+/* start todos */
+
