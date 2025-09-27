@@ -10,7 +10,35 @@ export default function Home() {
 
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
 
+  const [title, setTitle] = useState('')
+  const [desc, setDesc] = useState('')
+  const [priority, setPriority] = useState('')
 
+  const addTodoHandler = async () => {
+
+    const todoMap = {
+      title,
+      desc,
+      priority
+    }
+
+    const res = await fetch('http://localhost:3000/api/todo', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(todoMap)
+    })
+    const data = await res.json()
+
+    if (res.status === 201) {
+      setTitle('')
+      setDesc('')
+      setPriority('')
+    }
+
+    alert(data.message)
+  }
 
   return (
     <>
