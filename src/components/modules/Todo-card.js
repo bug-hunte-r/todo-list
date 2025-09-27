@@ -28,7 +28,7 @@ function TodoCard() {
                 <div className='todo-card' key={todo._id}>
 
                     <div className='container-todos-texts'>
-                        <p className='todo-priority'>{todo.priority}</p>
+                        <p className={`todo-priority ${todo.priority === 'High' ? 're-2' : todo.priority === 'Medium' ? 'or-2' : todo.priority === 'Low' ? 'gr-2' : ''}`}>{todo.priority}</p>
                         <h2 className='todo-title'>{todo.title}</h2>
                         <p className='todo-desc'>{todo.desc}</p>
                     </div>

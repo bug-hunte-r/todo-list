@@ -226,3 +226,30 @@ body{
     width: 70px;
     cursor: pointer;
 }
+
+.gr-2 {
+    color: green;
+    background-color: rgb(227, 255, 227);
+    width: 80px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.or-2 {
+    color: orangered;
+    background-color: rgb(252, 228, 219);
+    width: 80px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.re-2 {
+    color: red;
+    background-color: rgb(255, 223, 223);
+    width: 80px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+}

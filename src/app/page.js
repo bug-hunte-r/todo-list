@@ -37,6 +37,7 @@ export default function Home() {
       setPriority('')
 
       setIsAddModalOpen(false)
+      window.location.reload()
     }
 
     alert(data.message)
