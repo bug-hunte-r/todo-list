@@ -2,13 +2,15 @@
 
 .navbar{
     background-color: #715A5A;
-    width: 100%; 
+    width: 95vw; 
     height: 90px;
     display: flex;
     justify-self: center;
     align-items: center;
     justify-content: space-between;
     padding: 0px 30px;
+    margin-top: 40px;
+    border-radius: 10px;
 }
 
 .title-project{
@@ -48,7 +50,7 @@
     display: flex;
     align-self: center;
     justify-self: center;
-    margin-top: 80px;
+    margin-top: 50px;
     flex-direction: column;
     row-gap: 50px;
 }
