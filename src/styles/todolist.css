@@ -50,19 +50,19 @@
     justify-self: center;
     margin-top: 80px;
     flex-direction: column;
-    row-gap: 30px;
+    row-gap: 50px;
 }
 
 
 .todo-card{
     background-color: white;
     width: 100%;
-    height: 150px;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0px 0px 3px 1px #715A5A;
     display: flex;
     justify-content: space-between;
-    padding: 0px 20px;
+    padding: 30px;
     align-items: center;
 }
 
@@ -74,12 +74,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
+    row-gap: 10px;
+    /* background-color: blue; */
 }
 
 .todo-title{
     color: #715A5A;
     font-size: 25px;
+    margin-top: 20px;
 }
 
 .todo-desc{
@@ -89,16 +91,13 @@
 
 .todo-priority{
     color: green;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    padding-top: 10px;
 }
 
 .container-todos-icons{
     width: 15%;
     display: flex;
     justify-content: space-between;
+    /* background-color: red; */
 }
 
 .todos-icons{

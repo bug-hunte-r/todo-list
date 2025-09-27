@@ -12,7 +12,7 @@ function TodoCard() {
             <div className='container-todos-texts'>
                 <p className='todo-priority'>Todo Priority</p>
                 <h2 className='todo-title'>Todo Title</h2>
-                <p className='todo-desc'>Todo desc</p>
+                <p className='todo-desc'>Todo des is the best platform for pepole and the animals are very cute and they can eat my dick babay girl hi i do the playbody</p>
             </div>
 
             <div className='container-todos-icons'>

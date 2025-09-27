@@ -1,3 +1,9 @@
+@media only screen and (max-width: 760px) {
+    .container-todos-icons {
+        width: 20%;
+    }
+}
+
 @media only screen and (max-width: 500px) {
     .title-project {
         font-size: 25px;
@@ -12,6 +18,30 @@
     }
 }
 
+@media only screen and (max-width: 500px) {
+    .todo-card {
+        flex-direction: column;
+        text-align: center;
+        row-gap: 20px;
+        padding: 20px 20px;
+        height: auto;
+    }
+
+    .todo-priority {
+        position: relative;
+        padding-top: 0px;
+    }
+
+    .container-todos-icons {
+        width: 40%;
+    }
+
+    .container-todos-texts {
+        width: 100%;
+    }
+}
+
+
 @media only screen and (max-width: 360px) {
     .title-project {
         font-size: 20px;
@@ -23,6 +53,30 @@
 
     .icon-add-todo {
         font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 1240px) {
+    .todo-title {
+        font-size: calc(2vw + 5px);
+    }
+    
+    .todo-desc {
+        font-size: calc(1vw + 7px);
+    }
+    
+    .todo-priority {
+        font-size: calc(1vw + 7px);
+    }
+    
+    .todos-icons {
+        font-size: calc(1vw + 10px);
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .todo-card{
+        padding: 40px;
     }
 }
 
@@ -41,7 +95,7 @@
 }
 
 @media only screen and (min-width: 1650px) {
-    .navbar{
+    .navbar {
         height: 130px;
     }
 }
