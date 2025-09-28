@@ -105,24 +105,26 @@ function TodoCard() {
                 <button className='btns-filter-nav' onClick={filterHandler}>Completed <IoMdCheckmark /></button>
             </div>
 
-            {(isFiltered ? filteredTodos : todos)?.map(todo => (
+            {(isFiltered ? filteredTodos : todos)?.length > 0 ? (
 
-                <div className='todo-card' key={todo._id}>
+                (isFiltered ? filteredTodos : todos).map(todo => (
+                    <div className='todo-card' key={todo._id}>
+                        <div className='container-todos-texts'>
+                            <p className={`todo-priority ${todo.priority === 'High' ? 're-2' : todo.priority === 'Medium' ? 'or-2' : todo.priority === 'Low' ? 'gr-2' : ''}`}>{todo.priority}</p>
+                            <h2 className='todo-title'>{todo.title}</h2>
+                            <p className='todo-desc'>{todo.desc}</p>
+                        </div>
 
-                    <div className='container-todos-texts'>
-                        <p className={`todo-priority ${todo.priority === 'High' ? 're-2' : todo.priority === 'Medium' ? 'or-2' : todo.priority === 'Low' ? 'gr-2' : ''}`}>{todo.priority}</p>
-                        <h2 className='todo-title'>{todo.title}</h2>
-                        <p className='todo-desc'>{todo.desc}</p>
+                        <div className='container-todos-icons'>
+                            <FiEdit2 className='todos-icons' onClick={() => { setIsEditModalOpen(true); setTodoId(todo._id); }} />
+                            <FiTrash className='todos-icons trash' onClick={() => deleteTodoHandler(todo._id)} />
+                            <FaRegCircleCheck className={`todos-icons ${todo.isComplete ? 'complete' : ''}`} onClick={() => makeCompleteTheTodoHandler(todo._id)} />
+                        </div>
                     </div>
-
-                    <div className='container-todos-icons'>
-                        <FiEdit2 className='todos-icons' onClick={() => { setIsEditModalOpen(true), setTodoId(todo._id) }} />
-                        <FiTrash className='todos-icons trash' onClick={() => deleteTodoHandler(todo._id)} />
-                        <FaRegCircleCheck className={`todos-icons ${todo.isComplete ? 'complete' : ''}`} onClick={() => makeCompleteTheTodoHandler(todo._id)} />
-                    </div>
-
-                </div>
-            ))}
+                ))
+            ) : (
+                <p className='no-todos-msg'>No todos to display!</p>
+            )}
 
             <div className={`container-modal ${isEditModalOpen ? 'open-modal' : 'close-modal'}`}>
                 <div className='close-and-title'>

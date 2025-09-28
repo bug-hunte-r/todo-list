@@ -12,11 +12,17 @@ body {
     align-self: center;
 }
 
+.no-todos-msg{
+    color: #715A5A;
+    font-size: calc(2vw + 25px);
+    text-align: center;
+}
+
 .btns-filter-nav{
     color: #715A5A;
     border: none;
     background: none;
-    font-size: 20px;
+    font-size: calc(1vw + 8px);
     cursor: pointer;
     display: flex;
     align-items: center;
