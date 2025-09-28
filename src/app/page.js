@@ -5,6 +5,7 @@ import TodoCard from '@/components/modules/Todo-card';
 import { IoMdClose } from "react-icons/io";
 import { useState } from 'react';
 import { CiUser } from "react-icons/ci";
+import Link from 'next/link';
 
 export default function Home() {
 
@@ -49,7 +50,7 @@ export default function Home() {
       <div className='navbar'>
         <h1 className='title-project'>Todo List</h1>
         <div className='container-right-nav'>
-          <CiUser className='icon-auth' />
+          <Link href={'/Signup'}> <CiUser className='icon-auth' /> </Link>
           <h3 className='btn-add-new-todo' onClick={() => setIsAddModalOpen(true)}>Add New Todo</h3>
         </div>
       </div>
