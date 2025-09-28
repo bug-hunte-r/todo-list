@@ -1,10 +1,10 @@
 "use client"
 import style from '../styles/todolist.css'
 import media from '../styles/media-TodoList.css'
-import { FaPlus } from "react-icons/fa";
 import TodoCard from '@/components/modules/Todo-card';
 import { IoMdClose } from "react-icons/io";
 import { useState } from 'react';
+import { CiUser } from "react-icons/ci";
 
 export default function Home() {
 
@@ -48,7 +48,10 @@ export default function Home() {
 
       <div className='navbar'>
         <h1 className='title-project'>Todo List</h1>
-        <h3 className='btn-add-new-todo' onClick={() => setIsAddModalOpen(true)}>Add New Todo <FaPlus className='icon-add-todo' /></h3>
+        <div className='container-right-nav'>
+          <CiUser className='icon-auth' />
+          <h3 className='btn-add-new-todo' onClick={() => setIsAddModalOpen(true)}>Add New Todo</h3>
+        </div>
       </div>
 
       <div className="container">

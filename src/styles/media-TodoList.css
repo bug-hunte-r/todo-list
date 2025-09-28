@@ -55,6 +55,10 @@
     .icon-add-todo {
         font-size: 16px;
     }
+
+    .icon-auth {
+        font-size: 30px;
+    }
 }
 
 @media only screen and (max-width: 460px) {
@@ -66,6 +70,10 @@
 @media only screen and (max-width: 400px) {
     .container-Priority-levels {
         width: 100%;
+    }
+
+    .container-right-nav{
+        gap: 20px;
     }
 }
 
@@ -91,6 +99,10 @@
     .inputs-add-todo {
         padding: 8px 10px;
     }
+
+    .icon-auth {
+        font-size: 25px;
+    }
 }
 
 @media only screen and (max-width: 353px) {
@@ -104,7 +116,7 @@
         font-size: 16px;
     }
 
-    .container-filters-btn{
+    .container-filters-btn {
         width: 95vw;
     }
 }
@@ -153,7 +165,7 @@
     .inputs-add-todo {
         font-size: calc(1vw + 6px);
     }
-    
+
     .btn-add-new-todo-in-modal {
         font-size: calc(1vw + 6px);
     }
@@ -166,10 +178,14 @@
         font-size: calc(1vw + 3px);
     }
 
+    .icon-auth {
+        font-size: calc(2vw + 10px);
+    }
+
 }
 
 @media only screen and (min-width: 1360px) {
-    .btn-Priority-levels{
+    .btn-Priority-levels {
         width: 80px;
     }
 }
@@ -189,7 +205,7 @@
 }
 
 @media only screen and (min-width: 1480px) {
-    .btn-Priority-levels{
+    .btn-Priority-levels {
         width: 90px;
     }
 }
@@ -205,7 +221,7 @@
         padding: 40px;
     }
 
-    .btn-Priority-levels{
+    .btn-Priority-levels {
         width: 120px;
     }
 }
