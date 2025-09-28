@@ -56,6 +56,20 @@ function TodoCard() {
         alert(data.message)
     }
 
+    const makeCompleteTheTodoHandler = async (id) => {
+
+        const res = await fetch(`http://localhost:3000/api/todo/complete/${id}`, {
+            headers: {
+                'Content-type': 'application/json',
+            },
+            method: 'PUT'
+        })
+        const data = await res.json()
+
+        alert(data.message);
+        window.location.reload()
+    }
+
     return (
         <>
             {todos?.map(todo => (
@@ -71,11 +85,12 @@ function TodoCard() {
                     <div className='container-todos-icons'>
                         <FiEdit2 className='todos-icons' onClick={() => { setIsEditModalOpen(true), setTodoId(todo._id) }} />
                         <FiTrash className='todos-icons trash' />
-                        <FaRegCircleCheck className='todos-icons check' />
+                        <FaRegCircleCheck className={`todos-icons ${todo.isComplete ? 'complete' : ''}`} onClick={() => makeCompleteTheTodoHandler(todo._id)}  />
                     </div>
 
                 </div>
             ))}
+
             <div className={`container-modal ${isEditModalOpen ? 'open-modal' : 'close-modal'}`}>
                 <div className='close-and-title'>
                     <IoMdClose className='icon-close-modal' onClick={() => setIsEditModalOpen(false)} />

@@ -1,6 +1,6 @@
 /* start nav */
 
-body{
+body {
     overflow-x: hidden;
 }
 
@@ -114,6 +114,12 @@ body{
     cursor: pointer;
 }
 
+.unComplete {
+    font-size: 20px;
+    color: #715A5A;
+    cursor: pointer;
+}
+
 /* end todos */
 
 /* start add todos modal */
@@ -177,7 +183,7 @@ body{
     color: #715A5A;
 }
 
-.top{
+.top {
     margin-top: 50px;
 }
 
@@ -242,4 +248,8 @@ body{
 
 .re-2 {
     color: red;
+}
+
+.complete {
+    color: rgb(2, 189, 2);
 }
