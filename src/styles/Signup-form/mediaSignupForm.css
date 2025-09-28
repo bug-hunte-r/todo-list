@@ -1,0 +1,94 @@
+@media only screen and (max-width: 640px) {
+    .form{
+        width: 95vw;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .inputs-form{
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 1240px) {
+
+    .icon-form{
+        font-size: calc(1vw + 10px);
+    }
+
+    .form{
+        width: 50vw;
+    }
+
+    .title-form{
+        font-size: calc(2vw + 18px);
+    }
+
+    .inputs-form{
+        font-size: calc(1vw + 5px);
+    }
+    
+    .btn-form{
+        font-size: calc(1vw + 5px);
+    }
+    
+    .text-form{
+        font-size: calc(1vw + 5px);
+    }
+}
+
+@media only screen and (min-width: 1500px){
+    .inputs-form{
+        padding: 10px;
+    }
+}
+
+@media only screen and (min-width: 1600px){
+    .form{
+        height: 450px;
+    }
+
+    .inputs-form{
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1900px){
+    .form{
+        height: 500px;
+    }
+}
+
+@media only screen and (min-width: 2000px){
+    .form{
+        height: 600px;
+    }
+
+    .icon-and-title{
+        bottom: 80px;
+    }
+
+    .inputs-form{
+        padding: 15px;
+    }
+
+    .btn-form{
+        padding: 10px 20px;
+    }
+}
+
+@media only screen and (min-width: 2300px){
+    .form{
+        height: 650px;
+    }
+}
+
+@media only screen and (min-width: 2400px){
+    .form{
+        height: 700px;
+    }
+
+    .icon-and-title{
+        bottom: 100px;
+    }
+}
