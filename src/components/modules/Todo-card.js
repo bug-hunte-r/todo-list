@@ -6,6 +6,8 @@ import { FiEdit2 } from "react-icons/fi";
 import { FiTrash } from "react-icons/fi";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
+import { IoMdCheckmark } from "react-icons/io";
+import { IoIosList } from "react-icons/io";
 
 function TodoCard() {
 
@@ -15,6 +17,8 @@ function TodoCard() {
     const [desc, setDesc] = useState('')
     const [priority, setPriority] = useState('')
     const [todoId, setTodoId] = useState(null)
+    const [filteredTodos, setFilteredTodos] = useState([])
+    const [isFiltered, setIsFiltered] = useState(false)
 
     useEffect(() => {
         const getAllTodos = async () => {
@@ -84,9 +88,24 @@ function TodoCard() {
         window.location.reload()
     }
 
+    const filterHandler = () => {
+        let completedTodos = todos.filter(todo => todo.isComplete === true)
+        setFilteredTodos(completedTodos)
+        setIsFiltered(true)
+    }
+
+    const showAllHandler = () => {
+        setIsFiltered(false)
+    };
+
     return (
         <>
-            {todos?.map(todo => (
+            <div className='container-filters-btn'>
+                <button className='btns-filter-nav' onClick={showAllHandler}>All <IoIosList /></button>
+                <button className='btns-filter-nav' onClick={filterHandler}>Completed <IoMdCheckmark /></button>
+            </div>
+
+            {(isFiltered ? filteredTodos : todos)?.map(todo => (
 
                 <div className='todo-card' key={todo._id}>
 

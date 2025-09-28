@@ -4,6 +4,25 @@ body {
     overflow-x: hidden;
 }
 
+.container-filters-btn{
+    width: 300px;
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.btns-filter-nav{
+    color: #715A5A;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 .navbar {
     background-color: #715A5A;
     width: 95vw;
