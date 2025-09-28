@@ -7,9 +7,15 @@ export async function PUT(req, { params }) {
 
     const { id } = params
 
-    const body = await req.json()
+    let body = await req.json()
 
-    const { title, desc, priority } = body
+    let { title, desc, priority } = body
+
+    let findTodoForSetDatasInInput = await Todo.findById(id)
+
+    if (!title?.trim()) title = findTodoForSetDatasInInput.title
+    if (!desc?.trim()) desc = findTodoForSetDatasInInput.desc
+    if (!priority?.trim()) priority = findTodoForSetDatasInInput.priority
 
     await Todo.findByIdAndUpdate(id, { $set: { title, desc, priority } })
 

@@ -14,6 +14,7 @@ function TodoCard() {
     const [title, setTitle] = useState('')
     const [desc, setDesc] = useState('')
     const [priority, setPriority] = useState('')
+    const [todoId, setTodoId] = useState(null)
 
     useEffect(() => {
         const getAllTodos = async () => {
@@ -26,34 +27,34 @@ function TodoCard() {
         getAllTodos()
     }, [])
 
-    const editTodoHandler = async () => {
+    const editTodoHandler = async (id) => {
 
         const todoMap = {
-          title,
-          desc,
-          priority
+            title,
+            desc,
+            priority
         }
-    
-        const res = await fetch('http://localhost:3000/api/todo/edit', {
-          method: 'PUT',
-          headers: {
-            'Content-type': 'application/json',
-          },
-          body: JSON.stringify(todoMap)
+
+        const res = await fetch(`http://localhost:3000/api/todo/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(todoMap)
         })
         const data = await res.json()
-    
+
         if (res.status === 200) {
-          setTitle('')
-          setDesc('')
-          setPriority('')
-    
-          setIsEditModalOpen(false)
-          window.location.reload()
+            setTitle('')
+            setDesc('')
+            setPriority('')
+
+            setIsEditModalOpen(false)
+            window.location.reload()
         }
-    
+
         alert(data.message)
-      }
+    }
 
     return (
         <>
@@ -68,7 +69,7 @@ function TodoCard() {
                     </div>
 
                     <div className='container-todos-icons'>
-                        <FiEdit2 className='todos-icons' />
+                        <FiEdit2 className='todos-icons' onClick={() => { setIsEditModalOpen(true), setTodoId(todo._id) }} />
                         <FiTrash className='todos-icons trash' />
                         <FaRegCircleCheck className='todos-icons check' />
                     </div>
@@ -88,7 +89,7 @@ function TodoCard() {
                     <button className='btn-Priority-levels or' value={'Medium'} onClick={event => setPriority(event.target.value)}>Medium</button>
                     <button className='btn-Priority-levels re' value={'High'} onClick={event => setPriority(event.target.value)}>High</button>
                 </div>
-                <button className='btn-add-new-todo-in-modal' onClick={editTodoHandler}>Edit</button>
+                <button className='btn-add-new-todo-in-modal' onClick={() => editTodoHandler(todoId)}>Edit</button>
             </div>
         </>
     )
