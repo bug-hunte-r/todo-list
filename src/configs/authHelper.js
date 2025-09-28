@@ -1,6 +1,6 @@
 import { compare, hash } from "bcryptjs"
 import { sign, verify } from "jsonwebtoken"
-import User from "../models/user"
+import User from "../model/User"
 import { cookies } from "next/headers"
 import connectToDb from "./db"
 
@@ -48,6 +48,5 @@ const getUser = async () => {
 
     return user
 }
-
 
 export { hasedPassHandler, generatetoken, isValidPassHandler, verifyTokenHandler, getUser }
