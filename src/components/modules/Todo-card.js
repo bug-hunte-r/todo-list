@@ -70,6 +70,19 @@ function TodoCard() {
         window.location.reload()
     }
 
+    const deleteTodoHandler = async (id) => {
+
+        const res = await fetch(`http://localhost:3000/api/todo/delete/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json',
+            },
+        })
+        const data = await res.json()
+
+        alert(data.message)
+    }
+
     return (
         <>
             {todos?.map(todo => (
@@ -84,8 +97,8 @@ function TodoCard() {
 
                     <div className='container-todos-icons'>
                         <FiEdit2 className='todos-icons' onClick={() => { setIsEditModalOpen(true), setTodoId(todo._id) }} />
-                        <FiTrash className='todos-icons trash' />
-                        <FaRegCircleCheck className={`todos-icons ${todo.isComplete ? 'complete' : ''}`} onClick={() => makeCompleteTheTodoHandler(todo._id)}  />
+                        <FiTrash className='todos-icons trash' onClick={() => deleteTodoHandler(todo._id)} />
+                        <FaRegCircleCheck className={`todos-icons ${todo.isComplete ? 'complete' : ''}`} onClick={() => makeCompleteTheTodoHandler(todo._id)} />
                     </div>
 
                 </div>
