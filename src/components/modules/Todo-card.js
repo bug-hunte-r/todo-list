@@ -35,7 +35,7 @@ function TodoCard() {
             priority
         }
 
-        const res = await fetch(`http://localhost:3000/api/todo/${id}`, {
+        const res = await fetch(`http://localhost:3000/api/todo/edit/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json',
