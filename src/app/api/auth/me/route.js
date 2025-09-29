@@ -19,7 +19,7 @@ export async function GET() {
 
     const user = await User.findOne({
         username: verifedToken?.username
-    })
+    }, '-password')
 
     return new Response(JSON.stringify(user), {status: 200})
 }
