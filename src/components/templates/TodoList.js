@@ -62,13 +62,13 @@ function TodoList() {
         }
         getUsersInfo()
     }, [])
-
+    
     return (
         <>
             <div className='navbar'>
                 <h1 className='title-project'>{name ? `Welcome ${name}` : 'Todo List'}</h1>
                 <div className='container-right-nav'>
-                    <Link href={'/Signup'}> {name ? <TbLogout className='icon-auth' /> : <CiUser className='icon-auth' />} </Link>
+                    <Link href={'/Signup'}> {name ? <TbLogout className='icon-auth' onClick={logoutHandler} /> : <CiUser className='icon-auth' />} </Link>
                     <h3 className='btn-add-new-todo' onClick={() => setIsAddModalOpen(true)}>Add New Todo</h3>
                 </div>
             </div>
