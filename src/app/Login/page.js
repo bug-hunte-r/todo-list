@@ -9,7 +9,7 @@ function Login() {
         <div className='form-container'>
             <div className='form'>
                 <div className='icon-and-title'>
-                    <FaArrowLeft className='icon-form' />
+                    <Link href={'/'}><FaArrowLeft className='icon-form' /></Link>
                     <h2 className='title-form'>Login</h2>
                 </div>
                 <input type='text' placeholder='Username' className='inputs-form' />
