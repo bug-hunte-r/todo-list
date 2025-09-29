@@ -17,7 +17,7 @@ function TodoList() {
     const [title, setTitle] = useState('')
     const [desc, setDesc] = useState('')
     const [priority, setPriority] = useState('')
-    const [username, setUsername] = useState('')
+    const [name, setName] = useState('')
 
     const addTodoHandler = async () => {
 
@@ -57,8 +57,8 @@ function TodoList() {
             const res = await fetch('http://localhost:3000/api/auth/me')
 
             const data = await res.json()
-            setUsername(data.username)
-
+            setName(data.user.username)
+                
         }
         getUsersInfo()
     }, [])
@@ -66,9 +66,9 @@ function TodoList() {
     return (
         <>
             <div className='navbar'>
-                <h1 className='title-project'>{username ? `Welcome ${username}` : 'Todo List'}</h1>
+                <h1 className='title-project'>{name ? `Welcome ${name}` : 'Todo List'}</h1>
                 <div className='container-right-nav'>
-                    <Link href={'/Signup'}> {username ? <TbLogout className='icon-auth' /> : <CiUser className='icon-auth' />} </Link>
+                    <Link href={'/Signup'}> {name ? <TbLogout className='icon-auth' /> : <CiUser className='icon-auth' />} </Link>
                     <h3 className='btn-add-new-todo' onClick={() => setIsAddModalOpen(true)}>Add New Todo</h3>
                 </div>
             </div>
