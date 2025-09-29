@@ -1,6 +1,7 @@
 import { generatetoken, isValidPassHandler } from "@/configs/authHelper"
 import User from "@/model/User"
 import { serialize } from "cookie"
+import { NextResponse } from "next/server"
 
 export async function POST(req) {
     try {
@@ -8,29 +9,27 @@ export async function POST(req) {
         const body = await req.json()
 
         const { username, password } = body
-        
-        
+
+
         if (!username.trim() || !password.trim()) {
-            return new Response(JSON.stringify({ message: 'Datas are not valid' }), { status: 409 })
+            return NextResponse.json({ message: 'Datas are not valid' }, { status: 409 })
         }
 
-        
         const isUserLogin = await User.findOne({ username: username })
-        
+
         if (!isUserLogin) {
-            return new Response(JSON.stringify({ message: 'Account not found' }), { status: 404 })
+            return NextResponse.json({ message: 'Account not found' }, { status: 404 })
         }
 
         const verifedPass = await isValidPassHandler(password, isUserLogin.password)
-        
+
         if (!verifedPass) {
-            return new Response(JSON.stringify({ message: 'Username or password is invalid' }), { status: 422 })
+            return NextResponse.json({ message: 'Username or password is invalid' }, { status: 422 })
         }
 
-        const token = generatetoken({username})
+        const token = generatetoken({ username })
 
-        return new Response(
-            JSON.stringify({ message: 'You Are Logined Successfully' }), {
+        return NextResponse.json({ message: 'You are logined' }, {
             status: 200,
             headers: {
                 'Set-Cookie':
@@ -43,7 +42,7 @@ export async function POST(req) {
         })
 
     } catch (error) {
-        return new Response(JSON.stringify({ message: error.message }), { status: 500 })
+        return NextResponse.json({ message: error.message }, { status: 500 })
     }
 
 }

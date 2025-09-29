@@ -1,5 +1,6 @@
 import connectToDb from "@/configs/db"
 import Todo from "@/model/Todo"
+import { NextResponse } from "next/server"
 
 export async function PUT(req, { params }) {
 
@@ -19,5 +20,6 @@ export async function PUT(req, { params }) {
 
     await Todo.findByIdAndUpdate(id, { $set: { title, desc, priority } })
 
-    return new Response(JSON.stringify({ message: 'Todo Edited' }), { status: 200 })
+    return NextResponse.json({message: 'Todo Edited'}, {status: 200})
+
 }

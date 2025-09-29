@@ -1,5 +1,6 @@
 import connectToDb from "@/configs/db";
 import Todo from "@/model/Todo";
+import { NextResponse } from "next/server";
 
 export async function DELETE(req, { params }) {
 
@@ -9,5 +10,5 @@ export async function DELETE(req, { params }) {
 
     await Todo.findByIdAndDelete(id)
 
-    return new Response(JSON.stringify({message: 'Todo deleted'}), {status: 200})
+    return NextResponse.json({message: 'Todo Deleted'}, {status: 200})
 }

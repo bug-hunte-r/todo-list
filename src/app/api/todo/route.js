@@ -2,7 +2,6 @@ import { getUser } from "@/configs/authHelper";
 import connectToDb from "../../../configs/db";
 import Todo from "@/model/Todo"
 import { NextResponse } from "next/server";
-
 export async function POST(req) {
 
     await connectToDb()
@@ -16,7 +15,11 @@ export async function POST(req) {
     }
 
     const userInfo = await getUser()
-    
+
+    if (!userInfo) {
+        return NextResponse.json({ message: 'Please first login' }, { status: 409 })
+    }
+
     await Todo.create({ title, desc, priority, user: userInfo._id })
 
     return NextResponse.json({ message: 'Todo Added Successfully' }, { status: 201 })
@@ -24,7 +27,9 @@ export async function POST(req) {
 
 export async function GET() {
 
-    const allTodos = await Todo.find().populate('user', '-password')
+    const mainUser = await getUser()
+
+    const allTodos = await Todo.find({ user: mainUser._id }).populate('user', '-password')
 
     if (allTodos.length === 0) {
         return NextResponse.json({ message: 'Todos not found' }, { status: 404 })

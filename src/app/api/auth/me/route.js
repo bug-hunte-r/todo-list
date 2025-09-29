@@ -2,6 +2,7 @@ import { verifyTokenHandler } from "@/configs/authHelper"
 import connectToDb from "@/configs/db"
 import User from "@/model/User"
 import { cookies } from "next/headers"
+import { NextResponse } from "next/server"
 
 export async function GET() {
     await connectToDb()
@@ -21,5 +22,5 @@ export async function GET() {
         username: verifedToken?.username
     }, '-password')
 
-    return new Response(JSON.stringify(user), {status: 200})
+    return NextResponse.json({ user }, { status: 200 })
 }

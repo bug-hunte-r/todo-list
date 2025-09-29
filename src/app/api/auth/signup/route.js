@@ -2,27 +2,24 @@ import { generatetoken, hasedPassHandler } from "@/configs/authHelper"
 import connectToDb from "@/configs/db"
 import User from "@/model/User"
 import { serialize } from "cookie"
+import { NextResponse } from "next/server"
 
 export async function POST(req) {
     try {
-
         await connectToDb()
 
         const body = await req.json()
 
-        console.log(body);
-        
-
         const { username, password } = body
 
         if (!username.trim() || !password.trim()) {
-            return new Response(JSON.stringify({ message: 'Datas are not valid' }), { status: 409 })
+            return NextResponse.json({ message: 'Datas are not valid' }, { status: 409 })
         }
 
         const isUsernameExist = await User.findOne({ username: username })
 
         if (isUsernameExist) {
-            return new Response(JSON.stringify({ message: 'Username is already exist' }), { status: 422 })
+            return NextResponse.json({ message: 'Username is already exist' }, { status: 409 })
         }
 
         const hashedPass = await hasedPassHandler(password)
@@ -31,8 +28,7 @@ export async function POST(req) {
 
         await User.create({ username, password: hashedPass })
 
-        return new Response(
-            JSON.stringify({ message: 'You are Signuped Successfully' }), {
+        return NextResponse.json({ message: 'You are signuped' }, {
             status: 201,
             headers: {
                 'Set-Cookie':
@@ -45,7 +41,7 @@ export async function POST(req) {
         })
 
     } catch (error) {
-        return new Response(JSON.stringify({ message: error.message }), { status: 500 })
+        return NextResponses.json({ message: error.message }, { status: 500 })
     }
 
 }

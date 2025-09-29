@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { CiUser } from "react-icons/ci";
 import Link from 'next/link';
 import { TbLogout } from "react-icons/tb";
+import { redirect } from 'next/navigation';
 
 function TodoList() {
 
@@ -35,6 +36,8 @@ function TodoList() {
         })
         const data = await res.json()
 
+        alert(data.message)
+
         if (res.status === 201) {
             setTitle('')
             setDesc('')
@@ -43,7 +46,9 @@ function TodoList() {
             window.location.reload()
         }
 
-        alert(data.message)
+        if (res.status === 409) {
+            redirect('/Login')
+        }
     }
 
     useEffect(() => {
