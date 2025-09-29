@@ -20,6 +20,11 @@ const todoSchema = new mongoose.Schema({
     isComplete: {
         type: Boolean,
         default: false
+    },
+
+    user: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User',
     }
 
 })

@@ -44,7 +44,7 @@ const getUser = async () => {
 
     const user = await User.findOne({
         username: verifedToken?.username
-    })
+    }, '-password')
 
     return user
 }

@@ -1,5 +1,7 @@
+import { getUser } from "@/configs/authHelper";
 import connectToDb from "../../../configs/db";
 import Todo from "@/model/Todo"
+import { NextResponse } from "next/server";
 
 export async function POST(req) {
 
@@ -9,22 +11,24 @@ export async function POST(req) {
 
     const { title, desc, priority } = body
 
-    if (!title.trim() || !desc.trim() || !priority.trim()) {
-        return new Response(JSON.stringify({ message: 'Datas are not valid' }), { status: 422 })
+    if (!title?.trim() || !desc?.trim() || !priority?.trim()) {
+        return NextResponse.json({ message: 'Datas are not valid' }, { status: 422 })
     }
 
-    await Todo.create({ title, desc, priority })
+    const userInfo = await getUser()
+    
+    await Todo.create({ title, desc, priority, user: userInfo._id })
 
-    return new Response(JSON.stringify({ message: 'Todo Added Successfully' }), { status: 201 })
+    return NextResponse.json({ message: 'Todo Added Successfully' }, { status: 201 })
 }
 
 export async function GET() {
 
-    const allTodos = await Todo.find({})
+    const allTodos = await Todo.find().populate('user', '-password')
 
-    if (!allTodos) {
-        return new Response(JSON.stringify({ message: 'Todo not found' }), { status: 404 })
+    if (allTodos.length === 0) {
+        return NextResponse.json({ message: 'Todos not found' }, { status: 404 })
     }
 
-    return new Response(JSON.stringify(allTodos), { status: 200 })
+    return NextResponse.json(allTodos, { status: 200 })
 }

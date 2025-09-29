@@ -7,6 +7,7 @@ import { IoMdClose } from "react-icons/io";
 import { useState } from 'react';
 import { CiUser } from "react-icons/ci";
 import Link from 'next/link';
+import { TbLogout } from "react-icons/tb";
 
 function TodoList() {
 
@@ -38,7 +39,6 @@ function TodoList() {
             setTitle('')
             setDesc('')
             setPriority('')
-
             setIsAddModalOpen(false)
             window.location.reload()
         }
@@ -61,9 +61,9 @@ function TodoList() {
     return (
         <>
             <div className='navbar'>
-                <h1 className='title-project'>Welcome <span className='username'>{username}</span></h1>
+                <h1 className='title-project'>{username ? `Welcome ${username}` : 'Todo List'}</h1>
                 <div className='container-right-nav'>
-                    <Link href={'/Signup'}> <CiUser className='icon-auth' /> </Link>
+                    <Link href={'/Signup'}> {username ? <TbLogout className='icon-auth' /> : <CiUser className='icon-auth' />} </Link>
                     <h3 className='btn-add-new-todo' onClick={() => setIsAddModalOpen(true)}>Add New Todo</h3>
                 </div>
             </div>
