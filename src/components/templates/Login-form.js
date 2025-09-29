@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import style from '../../styles/Signup-form/SignupForm.css'
 import media from '../../styles/Signup-form/mediaSignupForm.css'
 import { FaArrowLeft } from "react-icons/fa6";
